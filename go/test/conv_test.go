@@ -1,15 +1,12 @@
-package main
+package test
 
 import (
 	"fmt"
+	"testing"
 	"time"
 )
 
-func main() {
-	typeAssert()
-}
-
-func typeAssert() {
+func TestConv(t *testing.T) {
 	var v1 any = 3
 
 	s, ok := v1.(string)
