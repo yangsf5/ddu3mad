@@ -1,12 +1,15 @@
 package ifreturn
 
-func BadFunc(a, b, c, d int) int {
+func BadFunc(a, b, c, d int, s []string) int {
 	if a != 1 {
 		if b != 2 {
 			if c != 3 {
 				if d != 4 {
-					// do something
-					// ...
+					for range s {
+						// do something
+						// ...
+					}
+
 					return 1
 				}
 			}
@@ -16,7 +19,7 @@ func BadFunc(a, b, c, d int) int {
 	return 0
 }
 
-func Refactor(a, b, c, d int) int {
+func Refactor(a, b, c, d int, s []string) int {
 	if a == 1 {
 		return 0
 	}
@@ -33,7 +36,10 @@ func Refactor(a, b, c, d int) int {
 		return 0
 	}
 
-	// do something
-	// ...
+	for range s {
+		// do something
+		// ...
+	}
+
 	return 1
 }
