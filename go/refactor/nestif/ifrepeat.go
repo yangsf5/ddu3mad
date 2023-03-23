@@ -55,7 +55,7 @@ func BadSimpleElse(a, b int, name string) (int, int) {
 	if a == 999 && name == "3Mad" {
 		// do something
 		// many lines ...
-		sum += a * 2
+		sum = a * 2
 		c = b * a
 	} else {
 		c = b * (a + 1000) // else 里非常简单
@@ -72,7 +72,7 @@ func RefactorSimpleElse(a, b int, name string) (int, int) {
 	if a == 999 && name == "3Mad" {
 		// do something
 		// many lines ...
-		sum += a * 2
+		sum = a * 2
 		c = b * a
 	}
 
