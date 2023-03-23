@@ -1,10 +1,18 @@
 import Button from "antd/es/button"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { ThemeProvider } from "~theme"
 
 function IndexPopup() {
   const [data, setData] = useState("")
+
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+ 
+  useEffect(() => {
+    window.addEventListener("message", (event) => {
+      console.log("EVAL output: " + event.data)
+    })
+  }, [])
 
   return (
     <ThemeProvider>
@@ -45,8 +53,17 @@ function IndexPopup() {
             })
           })
         }}>iframe mounting</button>
-      </div>
-    </ThemeProvider>
+
+      <br/>
+      <button
+        onClick={() => {
+          iframeRef.current.contentWindow.postMessage("10 + 20", "*")
+        }}>
+        Trigger iframe eval
+      </button>
+      <iframe src="sandbox.html" ref={iframeRef} style={{ display: "none" }} />
+    </div>
+  </ThemeProvider>
   )
 }
 
