@@ -16,6 +16,17 @@ You can start editing the popup by modifying `popup.tsx`. It should auto-update 
 
 For further guidance, [visit our Documentation](https://docs.plasmo.com/)
 
+## Modify pakcage.json
+
+After adding package to package.json, install:
+
+```bash
+pnpm install
+pnpm dev
+```
+
+The reload Visual Studio Code.
+
 ## Making production build
 
 Run the following:
