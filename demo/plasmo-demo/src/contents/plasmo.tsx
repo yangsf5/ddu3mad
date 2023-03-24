@@ -6,8 +6,16 @@ import type { PlasmoCSConfig, PlasmoGetShadowHostId } from "plasmo"
 import { ThemeProvider } from "~theme"
 
 export const config: PlasmoCSConfig = {
-  matches: ["https://www.plasmo.com/*"]
+  matches: ["https://www.plasmo.com/*", "https://www.baidu.com/*"]
 }
+
+window.addEventListener("load", () => {
+  console.log(
+    "You may find that having is not so pleasing a thing as wanting. This is not logical, but it is often true."
+  )
+
+  document.body.style.background = "pink"
+})
 
 const HOST_ID = "engage-csui"
 
@@ -28,3 +36,4 @@ const EngageOverlay = () => (
 )
 
 export default EngageOverlay
+
